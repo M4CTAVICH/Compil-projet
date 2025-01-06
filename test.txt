@@ -1,31 +1,25 @@
 PROGRAMME Somme
 VAR {
-    INTEGER i, somme;
+    INTEGER somme , i;
 }
 BEGIN
     somme = 0; 
     
 
-    FOR (i:1:1:i<=7) {
+    FOR (i:1:1:i<=15) {
         somme = somme + i;
     }
 
-    WRITELN("La somme des 7 premiers nombres est : ");
     WRITELN(somme);
 
     i = 1;
-    WRITELN("Les 3 premiers nombres sont : ");
-    WHILE (i <= 3) {
+    WHILE (i <= 5) {
         WRITELN(i);
         i = i + 1;
-        FOR (i:1:1:i<=10) {
+        FOR (i:1:1:i<=15) {
         somme = somme + i;
         
     }
     }
 
-    IF (somme > 15) {
-        WRITELN("La somme est superieure a 15.");
-    
-    };
 END

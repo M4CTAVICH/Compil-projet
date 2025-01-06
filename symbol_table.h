@@ -1,5 +1,3 @@
-/****************CREATION DE LA TABLE DES SYMBOLES ******************/
-/***Step 1: Definition des structures de données ***/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -31,9 +29,6 @@ element tab[1000];
 elt tabs[40],tabm[40];
 
 
-/***Step 2: initialisation de l'état des cases des tables des symbloles***/
-/*0: la case est libre    1: la case est occupée*/
-
 void initialisation()
 {
   int i;
@@ -49,7 +44,6 @@ void initialisation()
 }
 
 
-/***Step 3: insertion des entititées lexicales dans les tables des symboles ***/
 
 void inserer (char entite[], char code[],char type[],float val,int i, int y)
 {
@@ -79,7 +73,6 @@ void inserer (char entite[], char code[],char type[],float val,int i, int y)
 
 }
 
-/***Step 4: La fonction Rechercher permet de verifier  si l'entité existe dèja dans la table des symboles */
 void rechercher (char entite[], char code[],char type[],float val,int y)	
 {
 
@@ -127,7 +120,6 @@ switch(y)
 }
 
 
-/***Step 5 L'affichage du contenue de la table des symboles ***/
 
 void afficher() {
     int i;
@@ -169,18 +161,16 @@ void afficher() {
     } 
 }
 
-/***Step 6 : la fonction qui retourne la position d'un IDF  ***/
 
 int rechercherIDF(char entite[]){
   int i=0;
   for (i; i<1000; i++){
-    if (strcmp(entite,tab[i].name)==0){return i;}//retourne la position de l'IDF
+    if (strcmp(entite,tab[i].name)==0){return i;}
   }
-  return -1;//si l'IDF n'existe pas
+  return -1;
 }
 
 
-/***Step 8 : la fonction qui permet de vérifier si une variable (IDF) est déclarée ***/
 
 int rechercheNonDeclare(char entite[]) {
   int position;
@@ -193,7 +183,6 @@ int rechercheNonDeclare(char entite[]) {
 
 
 
-/***Step 9 : la fonction qui permet d'inserer un type à une variable (IDF) ***/
  
 void insererType(char entite[], char type[])
 	{
@@ -207,7 +196,6 @@ void insererType(char entite[], char type[])
 
 
 
-/***Step 12 : la fonction qui modifie le code des idfs constants ***/
 
 void CodeCst (char entite [])
 {
@@ -220,7 +208,6 @@ void CodeCst (char entite [])
 }
 
 
-/***Step 13 : la fonction qui sauvegarde la valeur des variables ***/ ////////////////////////////////////////////////////////////////////////////////////
 
 void SaveValue(char entite[], float val)
 {
@@ -233,7 +220,6 @@ void SaveValue(char entite[], float val)
 }
 
 
-/***Step 14 : la fonction qui verifie si l'idf est une constante ***/
 
 int VerifIdfConst(char entite[])
 {
@@ -247,7 +233,6 @@ int VerifIdfConst(char entite[])
 }
 
 
-/***Step 15 : la fonction qui returne le nombre de signe de formatage ***/
 
 int NbrSgnFormat (char chaine [])
 {
@@ -265,7 +250,6 @@ int NbrSgnFormat (char chaine [])
 }
 
 
-/***Step 16 : la fonction qui returne verifie la compatibilité des types  ***/
 
 int CompType (char entite [], char type [])
 {
@@ -278,7 +262,6 @@ int CompType (char entite [], char type [])
 	}
 }
 
-/***Step 17 : la fonction qui insere les signes de formatage d une instruction dans un tableau  ***/
 
  void insererSignFormat (char chaine[],compatibilite tableau[]){
   int i = 0;
@@ -311,7 +294,6 @@ int CompType (char entite [], char type [])
 
 
  }
-/***Step 18 : la fonction qui retourne le type de l iDF passe  a la fonction  ***/
 
 char* retournType(char entite[]){
   int position=0;
@@ -320,9 +302,6 @@ char* retournType(char entite[]){
     return tab[position].type;
   }
 }
-
-
-/***Step 17 : la fonction qui verifier la compatibilite entre  le signe de formatage et la variable dans un tableau  ***/
 
 int verifierCompatibilite(compatibilite tableau[],int nbr){
   int i = 0;
